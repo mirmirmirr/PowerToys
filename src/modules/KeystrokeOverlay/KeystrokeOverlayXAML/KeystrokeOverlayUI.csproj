@@ -28,15 +28,23 @@
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateSatelliteAssembliesForCore>true</GenerateSatelliteAssembliesForCore>
-</PropertyGroup>
-
-<ItemGroup>
-  <RuntimeHostConfigurationOption Include="MVVMTOOLKIT_ENABLE_INOTIFYPROPERTYCHANGING_SUPPORT" Value="true" />
-</ItemGroup>
+  </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" />
+    <RuntimeHostConfigurationOption Include="MVVMTOOLKIT_ENABLE_INOTIFYPROPERTYCHANGING_SUPPORT" Value="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controls\KeyVisuals\**" />
+    <EmbeddedResource Remove="Controls\KeyVisuals\**" />
+    <None Remove="Controls\KeyVisuals\**" />
+    <Page Remove="Controls\KeyVisuals\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm"/>
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" />
     <PackageReference Include="Microsoft.Extensions.Hosting" />
     <PackageReference Include="System.Text.Json" />
     <Manifest Include="$(ApplicationManifest)" />
