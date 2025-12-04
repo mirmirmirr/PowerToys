@@ -98,7 +98,21 @@ namespace KeystrokeOverlayUI
         }
 
         // --- Properties bound in XAML ---
-        public int TextSize => _currentConfig.TextSize.Value;
+        public int TextSize
+        {
+            get
+            {
+                int v = _currentConfig.TextSize.Value;
+
+                // WinUI requires FontSize >= 1
+                if (v < 1)
+                {
+                    return 12; // or whatever default you want
+                }
+
+                return v;
+            }
+        }
 
         public int OverlayTimeout => _currentConfig.OverlayTimeout.Value;
 

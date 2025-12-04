@@ -27,7 +27,7 @@ namespace KeystrokeOverlayUI
         public OverlaySettings Settings { get; }
 
         // This collection holds the keys currently being displayed
-        private ObservableCollection<KeyModel> ActiveKeys { get; } = new ObservableCollection<KeyModel>();
+        public ObservableCollection<KeyModel> ActiveKeys { get; } = new ObservableCollection<KeyModel>();
 
         public MainWindow()
         {
